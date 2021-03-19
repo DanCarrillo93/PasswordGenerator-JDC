@@ -36,8 +36,27 @@ var usrChoices = []
 
 //Character prompts
 var loCaseBo = window.confirm("Do you want lower case letters on your password?");
-var upCaseBo = window.confirm("Do you want upper case letters on your password?");
-var nmrsBo = window.confirm("Do you want number on your password?");
-var spclBo = window.confirm("Do you want special characters on your password?");
+if (loCaseBo === true) {
+  usrChoices = usrChoices.concat(letters);
+}
 
-//console.log(loCaseBo + upCaseBo + nmrsBo + spclBo)
+var upCaseBo = window.confirm("Do you want upper case letters on your password?");
+if (upCaseBo === true) {
+  usrChoices = usrChoices.concat(capLetters);
+}
+
+var nmrsBo = window.confirm("Do you want number on your password?");
+if (nmrsBo === true) {
+  usrChoices = usrChoices.concat(nmrs);
+}
+
+var spclBo = window.confirm("Do you want special characters on your password?");
+if (spclBo === true) {
+  usrChoices = usrChoices.concat(spclC);
+}
+
+if (usrChoices === 0) {
+  window.alert("You should at least include one character type!!!")
+}
+
+//console.log(usrChoices);
