@@ -30,3 +30,9 @@ if(nCharacters >= 8 && nCharacters < 129) {
   alert("Incorrect number of characters or invalid InputDeviceInfo.");
   var nCharacters = window.prompt("Number of characters to include (At least 8 and maximum 128):");
 }
+
+//Character prompts
+window.confirm("Do you want lower case letters on your password?");
+window.confirm("Do you want upper case letters on your password?");
+window.confirm("Do you want number on your password?");
+window.confirm("Do you want special characters on your password?");
