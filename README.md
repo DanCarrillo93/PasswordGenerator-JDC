@@ -1,5 +1,9 @@
 # 03 JavaScript: Password Generator
 
+## Description
+
+This is my first code of Javascript code made from scratch. The goal of this code is to generate a random password using some criteria, the length and the type of characters to use. The project takes 5 inputs from the user and drops a random password that is made with the user criteria. This program can be used for security when creating new accounts, use different passwords and they do not have mix problem. 
+
 ## Your Task
 
 This week’s homework requires you to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
