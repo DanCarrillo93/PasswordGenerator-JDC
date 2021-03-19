@@ -19,6 +19,12 @@ var capLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
 var nmrs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var spclC = ["!", '"', "#", "$", "%", "&", "*", "(", ")", "'", "+", ",", "-", ".", "/", ":"];
 
+//Empty arrays.
+var pwdArray = []
+var usrChoices = []
+
+//Function to call
+function PswdGen() {
 //Ask user for input.
 var nChar = window.prompt("Number of characters to include (At least 8 and maximum 128):");
 //console.log(nCharacters);
@@ -30,33 +36,42 @@ do {
 }
 while (nChar < 8 || nChar > 129 )
 
-//Empty arrays.
-var pwdArray = []
-var usrChoices = []
-
 //Character prompts
-var loCaseBo = window.confirm("Do you want lower case letters on your password?");
-if (loCaseBo === true) {
-  usrChoices = usrChoices.concat(letters);
+function CharacterSelection() {
+  var loCaseBo = window.confirm("Do you want lower case letters on your password?");
+  if (loCaseBo === true) {
+    usrChoices = usrChoices.concat(letters);
+  }
+
+  var upCaseBo = window.confirm("Do you want upper case letters on your password?");
+  if (upCaseBo === true) {
+    usrChoices = usrChoices.concat(capLetters);
+  }
+
+  var nmrsBo = window.confirm("Do you want number on your password?");
+  if (nmrsBo === true) {
+    usrChoices = usrChoices.concat(nmrs);
+  }
+
+  var spclBo = window.confirm("Do you want special characters on your password?");
+  if (spclBo === true) {
+    usrChoices = usrChoices.concat(spclC);
+  }
+
+  if (!loCaseBo && !upCaseBo && !nmrsBo && !spclBo) {
+    alert("You should at least include one character type!!!")
+    CharacterSelection();
+  }
+  console.log(usrChoices);
 }
 
-var upCaseBo = window.confirm("Do you want upper case letters on your password?");
-if (upCaseBo === true) {
-  usrChoices = usrChoices.concat(capLetters);
+for (i = 0, i < nChar, i++) {
+pwdArray[i] = usrChoices[Math.floor(Math.random() * usrChoices.lenght)];
 }
 
-var nmrsBo = window.confirm("Do you want number on your password?");
-if (nmrsBo === true) {
-  usrChoices = usrChoices.concat(nmrs);
+
+
 }
 
-var spclBo = window.confirm("Do you want special characters on your password?");
-if (spclBo === true) {
-  usrChoices = usrChoices.concat(spclC);
-}
+PswdGen();
 
-if (usrChoices === 0) {
-  window.alert("You should at least include one character type!!!")
-}
-
-//console.log(usrChoices);
