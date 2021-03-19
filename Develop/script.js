@@ -17,22 +17,23 @@ generateBtn.addEventListener("click", writePassword);
 var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var capLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var nmrs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-var spclC = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+var spclC = ["!", '"', "#", "$", "%", "&", "*", "(", ")", "'", "+", ",", "-", ".", "/", ":"];
 
-//
-var nCharacters = window.prompt("Number of characters to include (At least 8 and maximum 128):");
+//Ask user for input.
+var nChar = window.prompt("Number of characters to include (At least 8 and maximum 128):");
 //console.log(nCharacters);
 
-
-if(nCharacters >= 8 && nCharacters < 129) {
-  console.log(nCharacters);
-} else {
+//Right number of characters.
+do {
   alert("Incorrect number of characters or invalid InputDeviceInfo.");
-  var nCharacters = window.prompt("Number of characters to include (At least 8 and maximum 128):");
+  var nChar = window.prompt("Number of characters to include (At least 8 and maximum 128):");
 }
+while (nChar < 8 || nChar > 129 )
 
 //Character prompts
-window.confirm("Do you want lower case letters on your password?");
-window.confirm("Do you want upper case letters on your password?");
-window.confirm("Do you want number on your password?");
-window.confirm("Do you want special characters on your password?");
+var loCaseBo = window.confirm("Do you want lower case letters on your password?");
+var upCaseBo = window.confirm("Do you want upper case letters on your password?");
+var nmrsBo = window.confirm("Do you want number on your password?");
+var spclBo = window.confirm("Do you want special characters on your password?");
+
+//console.log(loCaseBo + upCaseBo + nmrsBo + spclBo)
