@@ -5,7 +5,8 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+  
+  
   passwordText.value = password;
 
 }
@@ -30,48 +31,63 @@ var nChar = window.prompt("Number of characters to include (At least 8 and maxim
 //console.log(nCharacters);
 
 //Right number of characters.
-do {
+if (nChar >= 8 && nChar < 129) {
+CharacterSelection();
+} else {
   alert("Incorrect number of characters or invalid InputDeviceInfo.");
-  var nChar = window.prompt("Number of characters to include (At least 8 and maximum 128):");
+  PswdGen();
 }
-while (nChar < 8 || nChar > 129 )
 
 //Character prompts
 function CharacterSelection() {
   var loCaseBo = window.confirm("Do you want lower case letters on your password?");
   if (loCaseBo === true) {
     usrChoices = usrChoices.concat(letters);
+    pwdArray.push(letters[Math.floor(Math.random()*letters.length)]);
   }
 
   var upCaseBo = window.confirm("Do you want upper case letters on your password?");
   if (upCaseBo === true) {
     usrChoices = usrChoices.concat(capLetters);
+    pwdArray.push(capLetters[Math.floor(Math.random()*capLetters.length)]);
+
   }
 
   var nmrsBo = window.confirm("Do you want number on your password?");
   if (nmrsBo === true) {
     usrChoices = usrChoices.concat(nmrs);
+    pwdArray.push(nmrs[Math.floor(Math.random()*nmrs.length)]);
+
   }
 
   var spclBo = window.confirm("Do you want special characters on your password?");
   if (spclBo === true) {
     usrChoices = usrChoices.concat(spclC);
-  }
+    pwdArray.push(spclC[Math.floor(Math.random()*spclC.length)]);
 
+  }
+//At least have one of the characters type selected
   if (!loCaseBo && !upCaseBo && !nmrsBo && !spclBo) {
     alert("You should at least include one character type!!!")
     CharacterSelection();
   }
   console.log(usrChoices);
+  console.log(pwdArray);
+
+  var PswArrLen = pwdArray.length;
+
+  for (i = PswArrLen; i < nChar; i++) {
+    pwdArray.push (usrChoices[Math.floor(Math.random() * usrChoices.length)]);
+    }
+  
+//convert array to string
+  var finalPwd = ""
+  for(f= 0; f < nChar; f++) {
+  finalPwd = finalPwd + pwdArray[Math.floor(Math.random() * pwdArray.length)]
+  
+  }
+  console.log(finalPwd);
 }
-
-for (i = 0, i < nChar, i++) {
-pwdArray[i] = usrChoices[Math.floor(Math.random() * usrChoices.lenght)];
 }
-
-
-
-}
-
+ 
 PswdGen();
-
