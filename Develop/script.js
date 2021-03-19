@@ -30,6 +30,10 @@ do {
 }
 while (nChar < 8 || nChar > 129 )
 
+//Empty arrays.
+var pwdArray = []
+var usrChoices = []
+
 //Character prompts
 var loCaseBo = window.confirm("Do you want lower case letters on your password?");
 var upCaseBo = window.confirm("Do you want upper case letters on your password?");
