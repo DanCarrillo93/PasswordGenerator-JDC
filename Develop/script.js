@@ -1,15 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  
-  
-  passwordText.value = password;
 
-}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -32,7 +24,7 @@ var nChar = window.prompt("Number of characters to include (At least 8 and maxim
 
 //Right number of characters.
 if (nChar >= 8 && nChar < 129) {
-CharacterSelection();
+  password = CharacterSelection(); 
 } else {
   alert("Incorrect number of characters or invalid InputDeviceInfo.");
   PswdGen();
@@ -86,8 +78,21 @@ function CharacterSelection() {
   finalPwd = finalPwd + pwdArray[Math.floor(Math.random() * pwdArray.length)]
   
   }
+
   console.log(finalPwd);
+  return finalPwd;
+
 }
+return password;
+console.log(password);
 }
- 
-PswdGen();
+
+// Write password to the #password input
+function writePassword() {
+  var password = PswdGen();
+  var passwordText = document.querySelector("#password");
+  
+  
+  passwordText.value = password;
+
+}
